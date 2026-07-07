@@ -21,6 +21,30 @@ pip install akshare openpyxl pandas
 
 ## 脚本说明
 
+推荐通过统一入口运行：
+
+```bash
+python main.py
+```
+
+菜单支持输入序号或括号中的任务名：
+
+```text
+1. 生成期货合约导入文件 (contracts)
+2. 生成期货合约价导入文件 (contract-prices)
+3. 生成期货成交记录 (trades)
+4. 生成现货市场价导入文件 (spot-prices)
+```
+
+也可以直接指定任务：
+
+```bash
+python main.py contracts
+python main.py contract-prices
+python main.py trades
+python main.py spot-prices
+```
+
 ### 1. 生成期货成交记录
 
 模板：
@@ -32,7 +56,7 @@ template/期货成交记录导入(明细).xlsx
 运行：
 
 ```bash
-python scripts/generate_futures_trades.py
+python main.py trades
 ```
 
 功能：
@@ -53,7 +77,7 @@ template/期货合约导入.xlsx
 运行：
 
 ```bash
-python scripts/generate_futures_contracts_akshare.py
+python main.py contracts
 ```
 
 功能：
@@ -80,7 +104,7 @@ template/期货合约价导入.xlsx
 运行：
 
 ```bash
-python scripts/generate_futures_contract_prices_akshare.py
+python main.py contract-prices
 ```
 
 功能：
@@ -101,7 +125,7 @@ template/现货市场价导入.xlsx
 运行：
 
 ```bash
-python scripts/generate_spot_market_price_from_futures_akshare.py
+python main.py spot-prices
 ```
 
 功能：
@@ -126,6 +150,7 @@ python scripts/generate_spot_market_price_from_futures_akshare.py
 ```text
 .
 ├── scripts/      # 生成脚本
+├── main.py       # 统一入口
 ├── template/     # Excel 导入模板
 ├── dist/         # 生成结果，已在 .gitignore 中忽略
 └── output/       # 历史输出目录，已在 .gitignore 中忽略
