@@ -5,16 +5,18 @@
 ## 环境要求
 
 - Python 3.9+
-- 推荐使用虚拟环境：`/Users/tongchen/Workspaces/PyCharm/.venv`
+- 推荐使用项目本地虚拟环境：`.venv`
 - 依赖库：
   - `akshare`
   - `openpyxl`
   - `pandas`
 
-安装依赖：
+创建虚拟环境并安装依赖：
 
 ```bash
-/Users/tongchen/Workspaces/PyCharm/.venv/bin/pip install akshare openpyxl pandas
+python -m venv .venv
+source .venv/bin/activate
+pip install akshare openpyxl pandas
 ```
 
 ## 脚本说明
@@ -30,7 +32,7 @@ template/期货成交记录导入(明细).xlsx
 运行：
 
 ```bash
-/Users/tongchen/Workspaces/PyCharm/.venv/bin/python scripts/generate_futures_trades.py
+python scripts/generate_futures_trades.py
 ```
 
 功能：
@@ -51,7 +53,7 @@ template/期货合约导入.xlsx
 运行：
 
 ```bash
-/Users/tongchen/Workspaces/PyCharm/.venv/bin/python scripts/generate_futures_contracts_akshare.py
+python scripts/generate_futures_contracts_akshare.py
 ```
 
 功能：
@@ -78,7 +80,7 @@ template/期货合约价导入.xlsx
 运行：
 
 ```bash
-/Users/tongchen/Workspaces/PyCharm/.venv/bin/python scripts/generate_futures_contract_prices_akshare.py
+python scripts/generate_futures_contract_prices_akshare.py
 ```
 
 功能：
@@ -99,7 +101,7 @@ template/现货市场价导入.xlsx
 运行：
 
 ```bash
-/Users/tongchen/Workspaces/PyCharm/.venv/bin/python scripts/generate_spot_market_price_from_futures_akshare.py
+python scripts/generate_spot_market_price_from_futures_akshare.py
 ```
 
 功能：
